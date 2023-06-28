@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Magang Davin</title>
+    <link href="home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Tambahkan link ke Font Awesome CSS -->
+    <style>
+      /* CSS styling for the navbar */
+      nav {
+        background-color: #60797b81;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0px;
+      }
+
+      ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        display: flex;
+        align-items: center;
+      }
+
+      ul.navbar li {
+        margin-right: 30px;
+      }
+
+      ul.navbar li:last-child {
+        margin-right: 0;
+      }
+
+      ul.navbar li a {
+        display: block;
+        padding: 10px 16px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        font-size: 16px; /* Ubah ukuran font sesuai kebutuhan */
+      }
+      ul.navbar li a:hover {
+        background-color: #77a2a730;
+      }
+      
+      .toggle-icon {
+        font-size: 24px;
+        color: #000000;
+        cursor: pointer;
+        display: none; /* Sembunyikan burger menu secara default */
+      }
+
+      @media (max-width: 768px) {
+        .toggle-icon {
+          display: block; /* Tampilkan burger menu pada tampilan seluler */
+        }
+
+        ul.navbar {
+          display: none;
+        }
+
+        ul.navbar.active {
+          display: flex;
+          max-height: 200px;
+        }
+
+        .search-input {
+          margin-left: 0; /* Menghapus margin kiri pada mode seluler */
+        }
+      }
+
+      .search-input {
+        padding: 6px 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      .search-input::placeholder {
+        color: #999;
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: #6c8a8d;
+      }
+
+      .search-button {
+        background-color: #748f92;
+        color: #000000;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100%;
+      }
+
+      h3.text2 {
+        text-align: left;
+      }
+
+      img {
+        max-width: 100%;
+        height: px;
+        float: right;
+      }
+
+      /* Perubahan CSS untuk tampilan desktop */
+      @media (min-width: 769px) {
+        form {
+          margin-left: auto; /* Pindahkan form pencarian ke kanan */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="">
+        <img src="dd_mark-removebg.png" alt="">
+      </div>
+      <i class="fas fa-bars toggle-icon"></i>
+      <ul class="navbar">
+        <li><a ref="#" class="Beranda">Beranda</a></li>
+        <li><a href="#" class="about">Tentang</a></li>
+        <li><a href="#" class="services">Layanan</a></li>
+        <li><a href="#" class="contact">Kontak</a></li>
+      </ul>
+    </nav>
+    <script>
+      const toggleIcon = document.querySelector(".toggle-icon");
+      const navbar = document.querySelector("ul.navbar");
+    
+      toggleIcon.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+        toggleIcon.style.display = "none"; // Menghilangkan toggle icon setelah di klik
+      });
+    
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 768) {
+          navbar.classList.remove("active");
+          toggleIcon.style.display = "none"; // Menghilangkan toggle icon pada tampilan seluler yang lebih lebar
+        } else {
+          toggleIcon.style.display = "block"; // Menampilkan kembali toggle icon pada mode seluler
+        }
+      });
+    
+      // Memastikan toggle icon disembunyikan saat halaman dimuat pada mode desktop
+      if (window.innerWidth > 768) {
+        toggleIcon.style.display = "none";
+      }
+    </script>
+      </body>
+</html>
